@@ -35,6 +35,16 @@ app.post("/", async (req, res) => {
     res.status(500).send({Status : "Error" });
   }
 });
-
+app.get("/", async (req, res) => {
+  
+    
+  try {
+    let Claim_request = await Claim.find();
+    res.send({All_Claim_Request: Claim_request})
+  
+  } catch (e) {
+    res.send("Bad Request");
+  }
+});
 
 module.exports = app;

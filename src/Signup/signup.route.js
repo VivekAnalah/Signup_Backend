@@ -21,5 +21,16 @@ app.post("/", async (req, res) => {
   }
 });
 
+app.get("/", async (req, res) => {
+ 
+    
+  try {
+    let user = await Signup.find();
+   res.send({UserDetails : user})
+  } catch (e) {
+    res.send("Bad Request");
+  }
+});
+
 
 module.exports = app;
