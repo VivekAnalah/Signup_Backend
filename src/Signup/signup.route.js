@@ -4,7 +4,7 @@ const app = express.Router();
 const Signup = require("./signup.model");
 
 app.post("/", async (req, res) => {
-  const { email, pass, name, mob } = req.body;
+  const { email, name, mob } = req.body;
     
   try {
     let user = await Signup.find({ email });
